@@ -7,9 +7,9 @@ class Program
         Console.WriteLine("Hello Prep2 World!");
         Console.WriteLine("Howdy there.");
 
-        Console.WriteLine("What is your grade persentage? ");
+        Console.WriteLine("What is your grade percentage? ");
         string gradePercentage = Console.ReadLine();
-        int percentage = int.Parse(gradePersentage);
+        int percentage = int.Parse(gradePercentage);
         string grade = "";
         
         if(percentage >= 90)
