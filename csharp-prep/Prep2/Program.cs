@@ -25,7 +25,7 @@ class Program
         
         Console.WriteLine($"\nYour grade is {grade}");  
 
-        if (persentage >= 70)
+        if (percentage >= 70)
         {
             Console.WriteLine("You did it. You passed the class. Congradulations!");
         }
