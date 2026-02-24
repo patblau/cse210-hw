@@ -23,6 +23,15 @@ class Program
         else
             grade = "F";
         
-        
+        Console.WriteLine($"\nYour grade is {grade}");  
+
+        if (grade >= 70)
+        {
+            Console.WriteLine("You did it. You passed the class. Congradulations!");
+        }
+        else
+        {        
+            Console.WriteLine("Sorry, you did not pass the course. Don't quit. You will do better next time.");
+        }
     }
 }
