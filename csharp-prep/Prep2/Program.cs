@@ -12,6 +12,17 @@ class Program
         int percentage = int.Parse(gradePersentage);
         string grade = "";
         
+        if(percentage >= 90)
+            grade = "A";
+        else if(percentage >= 80)
+            grade = "B";
+        else if(percentage >= 70)
+            grade = "C";
+        else if(percentage >= 60)
+            grade = "D";
+        else
+            grade = "F";
+        
         
     }
 }
