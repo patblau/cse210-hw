@@ -36,8 +36,8 @@ class Program
         else if (lastDigit <3)
             sgn = "-";
 
-        //no signs for A or F   
-        if (grd == "A" || grd == "F+")
+        //no A+  
+        if (grd == "A" && prcntg >=93)
         sgn = "";
 
         //print grade
