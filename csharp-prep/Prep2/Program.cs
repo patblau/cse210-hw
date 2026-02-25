@@ -36,9 +36,12 @@ class Program
         else if (lastDigit <3)
             sgn = "-";
 
-        //no A+  
+        //no A+ and F gets no signs
         if (grd == "A" && prcntg >=93)
-        sgn = "";
+            sgn = "";
+
+        if (grd == "F")
+            sgn = "";
 
         //print grade
         Console.WriteLine($"\nYour grade is {grd}{sgn}");  
