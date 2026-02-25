@@ -31,17 +31,12 @@ class Program
         string sgn = "";
 
         //create a sign variable
-        string sgn = "";
         if (lastDigit >=7)
-        {
             sgn = "+";
-        }
         else if (lastDigit <3)
-        {
             sgn = "-";
-        }
 
-        //no signs for A & F   
+        //no signs for A or F   
         if (grd == "A" && sgn == "+")
         {
             sgn = "";
