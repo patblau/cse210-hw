@@ -18,15 +18,12 @@ class Program
 		Console.Write("Pick your number: ");						
 		int guess = int.Parse(Console.ReadLine());						
 								
-		//loop with responce of higher and lower						
-		while (guess != mgcNumbr)
-        {
-            if (guess < mgcNmbr)						
-			    Console.WriteLine("Higher");					
-		    else 						
-			    Console.WriteLine("Lower");					
-		    else						
-			    Console.WriteLine("Wow! You Guessed it!");					
-	    }							
-    }
+		//respond higher and lower						
+		if (guess < mgcNmbr)						
+			Console.WriteLine("Higher");					
+		else if (guess > mgcNmbr)						
+			Console.WriteLine("Lower");					
+		else						
+			Console.WriteLine("Wow! You Guessed it!");					
+	}							
 }								
