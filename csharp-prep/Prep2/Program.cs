@@ -9,7 +9,7 @@ class Program
 
         //ask for the grade percentage
         Console.WriteLine("What is your grade percentage? ");
-        string grdprcnt = Console.ReadLine();
+        string grdPrcntg = Console.ReadLine();
         int prcntg = int.Parse(grdPrcntg);
         string grd = "";
         
