@@ -48,6 +48,6 @@ class Program
             Console.WriteLine("Hey, contrats! You did it. You passed the course.");
         else      
             Console.WriteLine("Not quite passing yet, but you are making progress. Don’t give up!");
-        }
+        
     }
 }
