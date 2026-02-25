@@ -37,24 +37,16 @@ class Program
             sgn = "-";
 
         //no signs for A or F   
-        if (grd == "A" && sgn == "+")
-        {
-            sgn = "";
-        }
-        if (grd == "F");
-        {
-            sgn = "";
-        }
+        if (grd == "A" || grd == "F+")
+        sgn = "";
 
+        //print grade
         Console.WriteLine($"\nYour grade is {grd}{sgn}");  
 
         //Need 70% to pass, state if passed or not
         if (prcntg >= 70) 
-        {
             Console.WriteLine("Hey, contrats! You did it. You passed the course.");
-        }
-        else
-        {        
+        else      
             Console.WriteLine("Not quite passing yet, but you are making progress. Don’t give up!");
         }
     }
