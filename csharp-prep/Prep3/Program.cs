@@ -1,4 +1,5 @@
-using System;								
+using System;
+using System.Linq.Expressions;
 using System.Reflection;								
 using System.Runtime.InteropServices;								
 								
@@ -27,6 +28,9 @@ class Program
 			    Console.WriteLine("Lower");					
 		    else						
 			    Console.WriteLine("Wow! You Guessed it!");					
-	    }							
+	    }
+
+        //responce for wrong answer
+        Console.Write("Woops, no. Try again: ");							
     }
 }								
