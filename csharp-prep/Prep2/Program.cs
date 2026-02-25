@@ -4,8 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep2 World!");
-        Console.WriteLine("Howdy there.");
+        Console.WriteLine("Howdy there Prep2 World!");
 
         //ask for the grade percentage
         Console.WriteLine("What is your grade percentage? ");
@@ -29,6 +28,7 @@ class Program
         //include "+ (>=7)" or "- (<3)" to the grade
         // use modulus operator %
         int lastDigit = prcntg % 10;
+        string sgn = "";
 
         //create a sign variable
         string sgn = "";
