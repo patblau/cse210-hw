@@ -1,0 +1,59 @@
+using System;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;								
+								
+class Program															
+{								
+	static void Main(string[] args)							
+	{							
+		Console.WriteLine("Ciao Prep3 World!");	
+
+        //computer picks random number
+        Random randomGenerator = new Random();
+        int mgcNmbr = randomGenerator.Next(1, 101);					
+								
+		//invite to play and retrieve a number 1/100					
+		Console.WriteLine("Lets play the magig number game, shall we?");						
+		Console.WriteLine("I will pick a number and you can guess what it is.");						
+		Console.WriteLine("The number will be between 1 and 100.");											
+								
+		// set up to play again
+		string plyAgn = "yes";
+		while (plyAgn == "yes");
+		{
+			//quess a number						
+			Console.Write("Pick a number: ");						
+			int guess = int.Parse(Console.ReadLine());						
+								
+			//loop with responce of higher and lower						
+			while (guess != mgcNmbr)
+        	{
+				if (guess < mgcNmbr)						
+			    	Console.WriteLine("Go higher");					
+		    	else 						
+			    	Console.WriteLine("Go lower");					
+
+				//responce for wrong answer
+				Console.WriteLine("Woops, nope. Try again: ");
+				guess = int.Parse(Console.ReadLine());		
+			}
+
+			//message when number is guessed
+			Console.WriteLine("Wow! You Guessed it!");	
+
+			
+			
+			Console.Write($"It took you {guesses} guesses.");
+
+		}
+		
+		
+		
+
+    }
+	
+
+	
+}	
