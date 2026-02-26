@@ -37,7 +37,7 @@ class Program
             }
         
         // average of list
-        double average = (double)sum / nmbrs.Count;
+        float average = (float)sum / nmbrs.Count;
         
         // maximum of list
         int max = nmbrs[0];
