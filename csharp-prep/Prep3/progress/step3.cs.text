@@ -10,10 +10,6 @@ class Program
 	{							
 		Console.WriteLine("Ciao Prep3 World!");	
 
-        //computer picks random number
-        Random randomGenerator = new Random();
-        int mgcNmbr = randomGenerator.Next(1, 101);					
-								
 		//invite to play and retrieve a number 1/100					
 		Console.WriteLine("Lets play the magig number game, shall we?");						
 		Console.WriteLine("I will pick a number and you can guess what it is.");						
@@ -21,9 +17,14 @@ class Program
 								
 		// set up to play again
 		string plyAgn = "yes";
-		int guesses = 0;
 		while (plyAgn == "yes")
 		{
+			//computer picks random number
+			Random randomGenerator = new Random();
+			int mgcNmbr = randomGenerator.Next(1, 101);					
+								
+			int guesses = 0; //to count guesses
+
 			//quess a number						
 			Console.Write("Pick a number: ");						
 			int guess = int.Parse(Console.ReadLine());						
