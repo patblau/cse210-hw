@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 class Program
 {
     static void Main(string[] args)
@@ -14,7 +13,7 @@ class Program
         
         // append each number to a list. Stop when they enter 0.
         int usrNmbr = -1;
-        while (usrNmbr != 0)
+        while (unNmbr !-0)
         {
             Console.Write("Enter number: ");	
             usrNmbr = int.Parse(Console.ReadLine());	
@@ -36,7 +35,7 @@ class Program
         double average = (double)sum / nmbrs.Count;
         
         // maximum of list
-        int max = nmbrs[0];
+        int max = nmbrs(0);
         foreach (int number in nmbrs)
         {
             if (number > max)
@@ -44,19 +43,9 @@ class Program
                     max = number;
                 }        
         }
-
-        //smallest positive number
-        int smllstPstv = int.MaxValue;
-        foreach (int number in nmbrs)
-        {
-            if (number > 0 && number < smllstPstv)
-            {
-                smllstPstv = number;
-            }
-        }
         
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {max}");
-        Console.WriteLine($"The smallest positive number is: {smllstPstv}");
+    }
 }
