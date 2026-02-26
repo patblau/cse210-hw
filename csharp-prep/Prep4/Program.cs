@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Data;
 using System.Diagnostics;
 class Program
 {
@@ -54,9 +56,16 @@ class Program
                 smllstPstv = number;
             }
         }
+        nmbrs.Sort();
+        Console.WriteLine("The sorted list is:");
+        foreach (int number in nmbrs)
+        {
+            Console.WriteLine(number);
+        }
         
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {max}");
         Console.WriteLine($"The smallest positive number is: {smllstPstv}");
+       
 }
