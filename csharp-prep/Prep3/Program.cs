@@ -33,9 +33,9 @@ class Program
         	//responce for wrong answer
         	Console.WriteLine("Woops, nope. Try again: ");
 			guess = int.Parse(Console.ReadLine());		
+		}
 
 		//message when number is guessed
-		Console.WriteLine("Wow! You Guessed it!");					
-	    }				
+		Console.WriteLine("Wow! You Guessed it!");					   				
     }
 }	
