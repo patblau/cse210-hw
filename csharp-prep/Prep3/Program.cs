@@ -29,11 +29,13 @@ class Program
 			    Console.WriteLine("Go higher");					
 		    else 						
 			    Console.WriteLine("Go lower");					
-		   						
-		Console.WriteLine("Wow! You Guessed it!");					
-	    }
 
-        //responce for wrong answer
-        Console.WriteLine("Woops, nope. Try again: ");							
+        	//responce for wrong answer
+        	Console.WriteLine("Woops, nope. Try again: ");
+			guess = int.Parse(Console.ReadLine());		
+
+		//message when number is guessed
+		Console.WriteLine("Wow! You Guessed it!");					
+	    }				
     }
 }	
