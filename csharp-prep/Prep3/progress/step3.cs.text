@@ -44,13 +44,13 @@ class Program
 				guess = int.Parse(Console.ReadLine());		
 			}
 
+			guesses++; // count total guesses 
+
 			//End message and count of attempts 
 			Console.WriteLine("Wow! You Guessed it!");	
 			Console.WriteLine($"It took you {guesses} guesses.");
 			Console.WriteLine("Would you like to play again?: ");
-
-			plyAgn = Console.ReadLine();
-
+			plyAgn = ConsoleReadLine();
 		}
     }
 }	
