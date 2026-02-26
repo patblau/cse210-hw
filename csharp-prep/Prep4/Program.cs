@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-
-
 class Program
 {
     static void Main(string[] args)
@@ -33,11 +31,20 @@ class Program
             }
         Console.WriteLine($"The sum is: {sum}");
         
-         // average of list
-         double average = (double)sum / nmbrs.Count;
-         Console.WriteLine($"The average is: {average}");
+        // average of list
+        double average = (double)sum / nmbrs.Count;
+        Console.WriteLine($"The average is: {average}");
         
-       
         // maximum of list
+        int max = nmbrs(0);
+            foreach (int number in nmbrs)
+            {
+                if (number > max)
+                    {
+                        max = number;
+                    }        
+            }
+        }
+        Console.WriteLine($"The largest number is: {max}");
     }
 }
