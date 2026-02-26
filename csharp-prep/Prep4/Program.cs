@@ -18,7 +18,9 @@ class Program
         int usrNmbr = -1;
         while (usrNmbr != 0)
         {
-            Console.Write("Enter number: ");	
+            Console.Write("Enter number (0 to quit): ");	
+            
+            string userResponse = Console.ReadLine();
             usrNmbr = int.Parse(Console.ReadLine());	
              
             if (usrNmbr != 0)
