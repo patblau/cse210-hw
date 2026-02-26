@@ -11,7 +11,7 @@ class Program
 
         //computer picks random number
         Random randomGenerator = new Random();
-        int mgcNumbr = randomGenerator.Next(1, 101);					
+        int mgcNmbr = randomGenerator.Next(1, 101);					
 								
 		//invite to play and retrieve a number 1/100					
 		Console.WriteLine("Lets play the magig number game, shall we?");						
