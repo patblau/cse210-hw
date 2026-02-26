@@ -33,9 +33,11 @@ class Program
             }
         Console.WriteLine($"The sum is: {sum}");
         
-
+         // average of list
+         double average = (double)sum / nmbrs.Count;
+         Console.WriteLine($"The average is: {average}");
         
-        // average of list
+       
         // maximum of list
     }
 }
