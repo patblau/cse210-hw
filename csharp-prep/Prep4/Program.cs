@@ -66,6 +66,6 @@ class Program
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {max}");
-        Console.WriteLine($"The smallest positive number is: {smllstPstv}");
-       
+        Console.WriteLine($"The smallest positive number is: {smllstPstv}"); 
+    }
 }
