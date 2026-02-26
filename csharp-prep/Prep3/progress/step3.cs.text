@@ -30,6 +30,9 @@ class Program
 			//loop with responce of higher and lower						
 			while (guess != mgcNmbr)
         	{
+				quessCount++; // to track guesses 
+				int guesses = 0;	
+				
 				if (guess < mgcNmbr)						
 			    	Console.WriteLine("Go higher");					
 		    	else 						
