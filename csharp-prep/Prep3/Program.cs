@@ -23,7 +23,7 @@ class Program
 		int guess = int.Parse(Console.ReadLine());						
 								
 		//loop with responce of higher and lower						
-		while (guess != mgcNumbr)
+		while (guess != mgcNmbr)
         {
             if (guess < mgcNmbr)						
 			    Console.WriteLine("Go higher");					
