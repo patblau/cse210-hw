@@ -49,8 +49,11 @@ class Program
 			//End message and count of attempts 
 			Console.WriteLine("Wow! You Guessed it!");	
 			Console.WriteLine($"It took you {guesses} guesses.");
-			Console.WriteLine("Would you like to play again?: ");
-			plyAgn = ConsoleReadLine();
+
+			Console.Write("Would you like to play again?: ");
+			plyAgn = ConsoleReadLine().ToLower();
+
+			Console.WriteLine("Thanks for playing! Bye for now.");
 		}
     }
 }	
