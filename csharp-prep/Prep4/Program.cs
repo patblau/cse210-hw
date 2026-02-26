@@ -22,6 +22,7 @@ class Program
             {	 	
                 nmbrs.Add(usrNmbr);	
             }					
+        }
 
         // sum of list
         int sum = 0;
@@ -29,22 +30,22 @@ class Program
             {
                 sum += number;
             }
-        Console.WriteLine($"The sum is: {sum}");
         
         // average of list
         double average = (double)sum / nmbrs.Count;
-        Console.WriteLine($"The average is: {average}");
         
         // maximum of list
         int max = nmbrs(0);
-            foreach (int number in nmbrs)
-            {
-                if (number > max)
-                    {
-                        max = number;
-                    }        
-            }
+        foreach (int number in nmbrs)
+        {
+            if (number > max)
+                {
+                    max = number;
+                }        
         }
+        
+        Console.WriteLine($"The sum is: {sum}");
+        Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {max}");
     }
 }
