@@ -43,5 +43,11 @@ class Program
         return number * number;
     }
 
-
+    // Display results
+    static void DisplayResults(string name, int quaredNumber, int birthYear)
+    {
+        int age = DateTime.Now.Year - birthYear;
+        Console.WriteLines($"{name}, the square of your favorite number is {squareNumber}");
+        Console.WriteLines($"{name}, you will be {age} this year.");
+    }
 }
