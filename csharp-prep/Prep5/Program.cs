@@ -24,7 +24,7 @@ class Program
     }
 
     // Asks for/returns favorite number (integer)
-    static int PrompUserNumber()
+    static int PromptUserNumber()
     {
         Console.Write("Enter your favorite number here, please: ");
         return int.Parse(ControlledExecution.ReadLine());
