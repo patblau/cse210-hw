@@ -27,7 +27,7 @@ class Program
     static int PromptUserNumber()
     {
         Console.Write("Enter your favorite number here, please: ");
-        return int.Parse(ControlledExecution.ReadLine());
+        return int.Parse(Console.ReadLine());
     }
     
     // Prompts for users birth year (outer parameter)
