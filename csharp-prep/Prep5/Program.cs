@@ -1,4 +1,5 @@
 using System;
+using System.Runtime;
 
 class Program
 {
@@ -15,10 +16,19 @@ class Program
         Console.WriteLine("Welcome to the Program!");
     }
 
-    // Asks for and returns the user's name (string)
+    // Asks for and returns name (string)
     static string PromptUserName()
     {
         Console.Write("Emter your name here: ");
+        return Console.ReadLine();
     }
-       
+
+    // Asks for/returns favorite number (integer)
+    static int PrompUserNumber()
+    {
+        Console.Write("Enter your favorite number here, please: ");
+        return int.Parse(ControlledExecution.ReadLine());
+    }
+    
+    // Prompts for users birth year (outer parameter)
 }
