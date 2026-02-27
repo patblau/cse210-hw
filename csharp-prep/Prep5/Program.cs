@@ -7,7 +7,7 @@ class Program
     {
         Console.WriteLine("Konnichiwa! Prep5 World!");
 
-        DisplayWelcomeMessage();
+        DisplayWelcome();
     }
 
     // Displays the message, "Welcome to the Program!"
