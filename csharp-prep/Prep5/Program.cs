@@ -44,7 +44,7 @@ class Program
     }
 
     // Display results
-    static void DisplayResult(string name, int squaredNumber, int birthYear)
+    static void DisplayResult(string name, int squareNumber, int birthYear)
     {
         int age = DateTime.Now.Year - birthYear;
         Console.WriteLines($"{name}, the square of your favorite number is {squareNumber}");
