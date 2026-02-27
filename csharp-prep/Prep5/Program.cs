@@ -7,7 +7,13 @@ class Program
     {
         Console.WriteLine("Konnichiwa! Prep5 World!");
 
+        // Main program flow (funtion calls and data going through them)
         DisplayWelcome();
+        string name = PromptUserName();
+        int favoriteNumber = PromptUserNumber();
+        PromptUserBirthYear(out int birthYear);
+        int squared = SquareNumber(favoriteNumber);
+        DisplayResult(name, squared, birthYear);
     }
 
     // Displays the message, "Welcome to the Program!"
