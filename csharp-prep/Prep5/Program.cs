@@ -31,4 +31,12 @@ class Program
     }
     
     // Prompts for users birth year (outer parameter)
+    static void PromptUserBirthYear(out int birthYear)
+    {
+        ConsoleWrite("Please enter your birth year: ");
+        birthYear = int.Parse(Console.ReadLine());
+    }
+
+    
+
 }
