@@ -14,7 +14,6 @@ class Program
             public string _jobTitle;
             public string _startYear;
             public string _endYear;
-
             public void Display()
         }
     
@@ -23,8 +22,8 @@ class Program
         { 
             public string _name;
             public List<Job> _jobs = new List<Job>();
-        
-
+            public void Display()
+          
         }
     }
 }
