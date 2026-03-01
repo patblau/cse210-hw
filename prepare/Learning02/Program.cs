@@ -15,6 +15,9 @@ class Program
             public string _startYear;
             public string _endYear;
             public void Display()
+            {
+            Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
+            }
         }
     
         //resume: person's name and list of jobs
@@ -24,7 +27,8 @@ class Program
             public List<Job> _jobs = new List<Job>();
             public void Display()
             {
-            Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
+            Console.WriteLine(_name);
+            Console.WriteLine("Jobs:");
             }
         }
     }
