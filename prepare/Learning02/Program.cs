@@ -14,14 +14,17 @@ class Program
             public string _jobTitle;
             public string _startYear;
             public string _endYear;
-            
+
             public void Display()
         }
-}
-
-    }
-
-        //person's name and list of jobs
-        class Resume
     
+        //resume: person's name and list of jobs
+        class Resume
+        { 
+            public string _name;
+            public List<Job> _jobs = new List<Job>();
+        
+
+        }
+    }
 }
