@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -6,12 +7,20 @@ class Program
     {
         Console.WriteLine("Bonjour! Learning02 World!");
 
-        //person's name and list of jobs
-        class Resume
-
-
         //jobs: Company, Job title, Start Year, End Year
         class Job
+        {
+            public string _company;
+            public string _jobTitle;
+            public string _startYear;
+            public string _endYear;
+
+        }
+}
+
     }
+
+        //person's name and list of jobs
+        class Resume
     
 }
