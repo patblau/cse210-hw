@@ -24,7 +24,7 @@ class Program
             public List<Job> _jobs = new List<Job>();
             public void Display()
             {
-            Console.WriteLine($"{_jobTitle} ({_companyName}) {_startYear--_endYear}");
+            Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
             }
         }
     }
