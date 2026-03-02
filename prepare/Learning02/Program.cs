@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 
 internal class NewBaseType
@@ -15,7 +16,7 @@ internal class NewBaseType
         job1._endYear = 2022;
 
         //Second job
-        Job job12 = new Job();
+        Job job2 = new Job();
         job2._company = "Apple";
         job2._jobTitle = "Manager";
         job2._startYear = 2022;
@@ -26,26 +27,27 @@ internal class NewBaseType
         resume._name = "Pat Blau";
         resume._jobs.Add(job1);
         resume._jobs.Add(job2);
+   
+        public DisplayAttribute();
     }
+}
 
-    class Program : NewBaseType
-    {
-
+{
     //jobs: Company, Job title, Start Year, End Year
     class Job
+    {
+        public string _company;
+        public string _jobTitle;
+        public int _startYear;
+        public int _endYear;
+        public void Display()
         {
-            public string _company;
-            public string _jobTitle;
-            public int _startYear;
-            public int _endYear;
-            public void Display()
-            {
             Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
-            }
         }
+    }
     
         //resume: person's name and list of jobs
-        class Resume
+    class Resume
         { 
             public string _name;
             public List<Job> _jobs = new List<Job>();
