@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-class Program
+internal class NewBaseType
 {
     static void Main(string[] args)
     {
@@ -25,10 +25,14 @@ class Program
         Resume resume = new Resume();
         resume._name = "Pat Blau";
         resume._jobs.Add(job1);
-        resume._jobs.Add(job12); 
+        resume._jobs.Add(job12);
+    }
 
-        //jobs: Company, Job title, Start Year, End Year
-        class Job
+    class Program : NewBaseType
+    {
+
+    //jobs: Company, Job title, Start Year, End Year
+    class Job
         {
             public string _company;
             public string _jobTitle;
