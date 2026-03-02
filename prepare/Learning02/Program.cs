@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 
-internal class NewBaseType
+class Program
 {
     static void Main(string[] args)
     {
@@ -32,30 +33,28 @@ internal class NewBaseType
     }
 }
 
-{
-    //jobs: Company, Job title, Start Year, End Year
-    class Job
+//jobs: Company, Job title, Start Year, End Year
+class Job
+{ 
+    public string _company;
+    public string _jobTitle;
+    public int _startYear;
+    public int _endYear;
+    public void Display()
     {
-        public string _company;
-        public string _jobTitle;
-        public int _startYear;
-        public int _endYear;
-        public void Display()
-        {
-            Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
-        }
-    }
-    
-        //resume: person's name and list of jobs
-    class Resume
-        { 
-            public string _name;
-            public List<Job> _jobs = new List<Job>();
-            public void Display()
-            {
-            Console.WriteLine(_name);
-            Console.WriteLine("Jobs:");
-            }
-        }
+        Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
     }
 }
+    
+//resume: person's name and list of jobs
+class Resume
+{ 
+    public string _name;
+    public List<Job> _jobs = new List<Job>();
+    public void Display()
+    {
+        Console.WriteLine(_name);
+        Console.WriteLine("Jobs:");
+    }
+}
+
