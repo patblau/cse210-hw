@@ -14,7 +14,14 @@ class Program
         job1._startYear = 2019;
         job1._endYear = 2022;
 
+        //Second job
+        Job job12 = new Job();
+        job2._company = "Apple";
+        job2._jobTitle = "Manager";
+        job2._startYear = 20122;
+        job2._endYear = 2024;
 
+        
         //jobs: Company, Job title, Start Year, End Year
         class Job
         {
