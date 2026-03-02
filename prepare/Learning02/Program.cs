@@ -7,6 +7,14 @@ class Program
     {
         Console.WriteLine("Bonjour! Learning02 World!");
 
+        //First job
+        Job job1 = new Job();
+        job1._company = "Microsoft";
+        job1._jobTitle = "Software Engineer";
+        job1._startYear = 2019;
+        job1._endYear = 2022;
+
+
         //jobs: Company, Job title, Start Year, End Year
         class Job
         {
