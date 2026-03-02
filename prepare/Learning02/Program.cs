@@ -21,7 +21,12 @@ class Program
         job2._startYear = 20122;
         job2._endYear = 2024;
 
-        
+        //Generate resume
+        Resume resume = new Resume();
+        resume._name = "Pat Blau";
+        resume._jobs.Add(job1);
+        resume._jobs.Add(job12); 
+
         //jobs: Company, Job title, Start Year, End Year
         class Job
         {
