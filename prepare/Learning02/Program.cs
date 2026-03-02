@@ -28,7 +28,7 @@ internal class NewBaseType
         resume._jobs.Add(job1);
         resume._jobs.Add(job2);
    
-        public DisplayAttribute();
+       resume.Display();
     }
 }
 
