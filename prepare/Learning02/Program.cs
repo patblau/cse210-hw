@@ -25,7 +25,7 @@ internal class NewBaseType
         Resume resume = new Resume();
         resume._name = "Pat Blau";
         resume._jobs.Add(job1);
-        resume._jobs.Add(job12);
+        resume._jobs.Add(job2);
     }
 
     class Program : NewBaseType
