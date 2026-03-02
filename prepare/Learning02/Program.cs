@@ -40,7 +40,7 @@ class Job
     public string _jobTitle = "";
     public int _startYear;
     public int _endYear;
-    
+
     public void Display()
     {
         Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
@@ -50,7 +50,7 @@ class Job
 //resume: person's name and list of jobs
 class Resume
 { 
-    public string _name;
+    public string _name = ""; 
     public List<Job> _jobs = new List<Job>();
     public void Display()
     {
