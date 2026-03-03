@@ -13,8 +13,26 @@ class Program
         Journal journal = new Journal();
         PromptGenerator promptGen = new PromptGenerator();
 
+        bool running = true;
+
         //Step 5 Provide a minue to pick from choices
         //Step 7 interface to follow the video.
+
+        while (running)
+        {
+            Console.WriteLine("Please select one of the following:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Save");
+            Console.WriteLine("5. Quit");
+            Console.Write("What would you like to do? ");
+
+            string choice = Console.ReadLine();
+            Console.WriteLine();
+
+
+        
 
         // Step 1 Write a new entry 
         // Display prompt from list 
@@ -39,5 +57,6 @@ class Program
         // Step 6 list of 5 different prompts
 
     
-        
+        }   
+    }
 }
