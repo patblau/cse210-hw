@@ -1,13 +1,22 @@
 using System;
-using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Aloha Learning03 World!");
+        Console.WriteLine("Aloha Develop02 World!");
+        Console.WriteLine("Welcome to your Journal Assistant.");
+        Console.WriteLine();
 
-         // Step 1 Write a new entry 
+        Journal journal = new Journal();
+        PromptGenerator promptGen = new PromptGenerator();
+
+        //Step 5 Provide a minue to pick from choices
+        //Step 7 interface to follow the video.
+
+        // Step 1 Write a new entry 
         // Display prompt from list 
         // Show random prompt 
     
@@ -27,10 +36,8 @@ class Program
         //Prompt for filename
         // load to journal
 
-        //Step 5 Provide a minue to pick from choices
-
         // Step 6 list of 5 different prompts
 
-        //Step 7 interface to follow the video.
+    
         
 }
