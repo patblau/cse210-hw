@@ -49,10 +49,21 @@ class Program
                 Entry entry = new Entry (date, prompt, response);
                 journal.AddEntry(entry);
 
+                Console.WriteLine("Entry added.\n");
+
         
-                // Step 2 Display the Journal
+                // Step 2 User Displays the Journal
+                else if ( choice == 2)
+
                 // Iterate through all entries in the journal
                 // Display on screen
+                
+                journal.DisplayAll();
+                Console.WriteLine();
+                
+
+
+                
 
                 // Step 3 Save the journal file
                 // Ask for a file name and save
