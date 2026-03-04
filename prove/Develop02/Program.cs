@@ -45,6 +45,10 @@ class Program
                 string response = Console.ReadLine();
                 String date = DateTime.Now.ToShortDateString();
 
+                // Create entry to add to journal
+                Entry entry = new Entry (date, prompt, response);
+                journal.AddEntry(entry);
+
         
                 // Step 2 Display the Journal
                 // Iterate through all entries in the journal
