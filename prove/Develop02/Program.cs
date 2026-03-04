@@ -31,32 +31,35 @@ class Program
             string choice = Console.ReadLine();
             Console.WriteLine();
 
+           // Step 1 Write a new entry 
+            if (choice == "1")
+            {
+                // Display prompt from list / Show random prompt
+                // PromptGenerator returns random prompt
+                string prompt = promptGen.GetRandomPrompt();
+                Console.WriteLine(prompt);
+                Console.Write("> ");
+
+                // Get user's response
+                // Get today's date
+                string response = Console.ReadLine();
+                String date = DateTime.Now.ToShortDateString();
 
         
+                // Step 2 Display the Journal
+                // Iterate through all entries in the journal
+                // Display on screen
 
-        // Step 1 Write a new entry 
-        // Display prompt from list 
-        // Show random prompt 
-    
-        // Get today's date
-        // User selects "Write"
-        // Add Entry to Journal and save
-        // PrompGenerator returns random prompt
-        
-        // Step 2 Display the Journal
-        // Iterate through all entries in the journal 
-        // Display on screen
+                // Step 3 Save the journal file
+                // Ask for a file name and save
+                
+                // Step 4 Load the journal
+                // Prompt for filename
+                // Load to journal
 
-        //Step 3 Save the fournal file
-        // ask for a file name and save
-
-        //Step 4 Loan the journal
-        //Prompt for filename
-        // load to journal
-
-        // Step 6 list of 5 different prompts
-
-    
-        }   
+                // Saves to one line using a separator that is unlikely to appear in responses.
+                // Format: date~|~prompt~|~response
+            }
+        }
     }
 }
