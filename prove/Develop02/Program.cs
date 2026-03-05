@@ -65,6 +65,21 @@ class Program
                 running = false
             }
 
+            // The Journal class will loop through the list of entries
+            public void DisplayAll()
+            {
+                foreach (Entry entry in _entries)
+                {
+                    entry.Display();
+                }
+            }
+            public void DisplayAll()
+            {
+                Console.WriteLine($"(_date) - {_prompt}");
+                Console.WriteLine(_response);
+                Console.WriteLine();
+            
+
                 // Step 3 Save the journal file
                 // Ask for a file name and save
                 
@@ -78,3 +93,24 @@ class Program
         }
     }
 }
+
+    // The Journal class will loop through the list of entries
+public class Journal
+{
+    private List<Entry> _entries = new List<Entry>();
+    public void AddEntry(Entry entry)
+    {
+        _enteries.Add(entry);
+    }
+    public void DisplayAll()
+    {
+        foreach (Entry entry in _entries)
+        {
+            entry.Display();
+        }
+    }
+}
+    
+            
+            
+            
