@@ -84,7 +84,35 @@ public class Journal
         }
     }
 }
-    
+
+public class Entry
+{
+    private string _date;
+    private string _prompt;
+    private string _response;
+
+    public Entry(string date, string prompt, string response)
+    {
+        _date = date;
+        _prompt = prompt;
+        _response = response;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"{_date} - {_prompt}");
+        Console.WriteLine(_response);
+        Console.WriteLine();
+    }
+}
+   // Step 3 Save the journal file 
+   // Ask for a file name and save 
+   // Step 4 Load the journal 
+   // Prompt for filename 
+   // Load to journal 
+   // Saves to one line using a separator that is unlikely to appear in responses.
+   // Format: date~|~prompt~|~response 
+   
             
             
             
