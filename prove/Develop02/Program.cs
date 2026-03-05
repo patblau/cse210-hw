@@ -62,9 +62,11 @@ class Program
             // Iterate through all entries in the journal
             else if (choice == "5")
             {
-                running = false
+                running = false;
             }
-
+        }
+    }
+}
             // The Journal class will loop through the list of entries
             public void DisplayAll()
             {
@@ -80,15 +82,7 @@ class Program
                 Console.WriteLine();
             
 
-                // Step 3 Save the journal file
-                // Ask for a file name and save
-                
-                // Step 4 Load the journal
-                // Prompt for filename
-                // Load to journal
-
-                // Saves to one line using a separator that is unlikely to appear in responses.
-                // Format: date~|~prompt~|~response
+               ormat: date~|~prompt~|~response
             }
         }
     }
