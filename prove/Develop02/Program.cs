@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -31,39 +32,38 @@ class Program
             string choice = Console.ReadLine();
             Console.WriteLine();
 
-           // Step 1 Write a new entry 
+            // Step 1 Write a new entry 
             if (choice == "1")
             {
                 // Display prompt from list / Show random prompt
-                // PromptGenerator returns random prompt
                 string prompt = promptGen.GetRandomPrompt();
                 Console.WriteLine(prompt);
                 Console.Write("> ");
 
                 // Get user's response
-                // Get today's date
                 string response = Console.ReadLine();
-                String date = DateTime.Now.ToShortDateString();
+                string date = DateTime.Now.ToShortDateString();
 
-                // Create entry to add to journal
-                Entry entry = new Entry (date, prompt, response);
-                journal.AddEntry(entry);
-
+                // Create entry and add to journal
+                Entry entry = new Entry(date, prompt, response);
+                journal.AddEntry(entry);  
+                
                 Console.WriteLine("Entry added.\n");
-
-        
-                // Step 2 User Displays the Journal
-                else if ( choice == 2)
-
-                // Iterate through all entries in the journal
-                // Display on screen
+            }
                 
+            // Step 2 Display the Journal  
+            else if (choice == "2")
+            {
+                // Display each entry on the screen
                 journal.DisplayAll();
-                Console.WriteLine();
-                
+                ConsoleWriteLine();
+            }
 
-
-                
+            // Iterate through all entries in the journal
+            else if (choice == "5")
+            {
+                running = false
+            }
 
                 // Step 3 Save the journal file
                 // Ask for a file name and save
