@@ -67,27 +67,7 @@ class Program
         }
     }
 }
-            // The Journal class will loop through the list of entries
-            public void DisplayAll()
-            {
-                foreach (Entry entry in _entries)
-                {
-                    entry.Display();
-                }
-            }
-            public void DisplayAll()
-            {
-                Console.WriteLine($"(_date) - {_prompt}");
-                Console.WriteLine(_response);
-                Console.WriteLine();
-            
-
-               ormat: date~|~prompt~|~response
-            }
-        }
-    }
-}
-
+           
     // The Journal class will loop through the list of entries
 public class Journal
 {
