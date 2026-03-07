@@ -59,6 +59,7 @@ class Program
             else if (choice == "2")
             { 
                 journal.DisplayAll();
+                Console.WriteLine();
 
             // Step 3 Save the journal file
             // Ask for a file name and save
