@@ -80,8 +80,6 @@ class Program
             }
         }
 
-           
-        }
     }
 }
            
@@ -102,6 +100,20 @@ public class Journal
     }
 }
 
+public class Journal
+{
+    
+}
+
+public class Entry
+{
+    
+}
+
+public class PromptGenerator
+{
+    
+}
 
      
             
