@@ -6,9 +6,9 @@ using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 
-class Program
+internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         Console.WriteLine("Aloha Develop02 World!");
         Console.WriteLine("Welcome to your Journal Assistant.");
@@ -113,10 +113,39 @@ public class Journal
     }
 }
 
-
+//Step 1 create an entry
+//Step 2 display an entry
+//Step 3 save an entry to file
+//Step 4 load an entry from file
 public class Entry
 {
-    
+    private string _date;
+    private string _prompt;
+    private string _response;
+    private Entry(string date, string prompt, string response)
+    {
+        _date = date;
+        _prompt = prompt;
+        _response = response;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"{_date} - {prompt}");
+        Console.WriteLine(_response);
+        Console.WriteLine();
+    }
+
+    public string ToFileString()
+    {
+        return $"{_date}~|~{_prompt}~|~{_response}";
+    }
+
+    public static Entry FromFileString(string line)
+    {
+        string[] parts = line.Split("~|~");
+        return new Entry(parts[0], parts[1], parts[2]);
+    }
 }
 
 public class PromptGenerator
