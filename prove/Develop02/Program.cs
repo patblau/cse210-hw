@@ -24,13 +24,13 @@ class Program
 
         while (running)
         {
-            Console.WriteLine("Please select one of the following:");
+            Console.WriteLine("What woud you like to do?");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
-            Console.Write("What would you like to do? ");
+            Console.Write("Place number here: ");
 
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -50,7 +50,7 @@ class Program
                 // Create entry, add date, and add to journal
                 Entry entry = new Entry(date, prompt, response);
                 journal.AddEntry(entry);  
-                Console.WriteLine("Entry added.\n");
+                Console.WriteLine("Your journal entry was added.\n");
             }
                 
             // Step 2 Display the Journal 
@@ -79,7 +79,7 @@ class Program
             
             else if (choice == "4")
             { 
-                Console.Write("Filename: ");
+                Console.Write("What file do you want loaded: ");
                 string filename = Console.ReadLine();
                 journal.LoadFromfile(filename);
             }
@@ -93,7 +93,7 @@ class Program
     }
 }
            
-// The Journal class will loop through the list of entries
+// Loop for entries list
 public class Journal
 {
     private List<Entry> _entries = new List<Entry>();
@@ -101,9 +101,11 @@ public class Journal
     {
         _entries.Add(entry);
     }
+    
+    // Step 2 DisplayAll
+    // Iterate through all entries in journal
     public void DisplayAll()
     {
-        // Iterate through all entries in the journal
         foreach (Entry entry in _entries)
         {
             entry.Display();
