@@ -93,6 +93,8 @@ internal class Program
     }
 }
            
+// Step 1 Store all entries
+// add new entry
 // Loop for entries list
 public class Journal
 {
@@ -102,7 +104,7 @@ public class Journal
         _entries.Add(entry);
     }
     
-    // Step 2 DisplayAll methods
+    // Step 2 DisplayAll method
     // Iterate through all entries in journal
     public void DisplayAll()
     {
@@ -124,6 +126,7 @@ public class Journal
         }
     }
 
+    // Step 4: Add LoadFromFile method
     public void LoadFromFile(string filename)
     {
         string[] lines = File.ReadAllLines(filename);
@@ -149,6 +152,7 @@ public class Entry
         _response = response;
     }
 
+    //Step 2 display an entry
     public void Display()
     {
         Console.WriteLine($"{_date} - {prompt}");
@@ -156,21 +160,19 @@ public class Entry
         Console.WriteLine();
     }
 
+    //Step 3 save an entry to file
     public string ToFileString()
     {
         return $"{_date}~|~{_prompt}~|~{_response}";
     }
 
+    //Step 4 load an entry from file
     public static Entry FromFileString(string line)
     {
         string[] parts = line.Split("~|~");
         return new Entry(parts[0], parts[1], parts[2]);
     }
 }
-
-//Step 2 display an entry
-//Step 3 save an entry to file
-//Step 4 load an entry from file
 
 public class PromptGenerator
 {
