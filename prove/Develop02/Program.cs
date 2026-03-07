@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 
 class Program
 {
@@ -52,29 +54,25 @@ class Program
             }
                 
             // Step 2 Display the Journal  
+            // Display each entry on the screen
             else if (choice == "2")
-            {
-                // Display each entry on the screen
+            { 
                 journal.DisplayAll();
-                ConsoleWriteLine();
+                Console.WriteLine(); 
             }
 
-            // Iterate through all entries in the journal
-            else if (choice == "5")
-            {
-                running = false;
-            }
+           
         }
     }
 }
            
-    // The Journal class will loop through the list of entries
+// The Journal class will loop through the list of entries
 public class Journal
 {
     private List<Entry> _entries = new List<Entry>();
     public void AddEntry(Entry entry)
     {
-        _enteries.Add(entry);
+        _entries.Add(entry);
     }
     public void DisplayAll()
     {
@@ -85,34 +83,7 @@ public class Journal
     }
 }
 
-public class Entry
-{
-    private string _date;
-    private string _prompt;
-    private string _response;
 
-    public Entry(string date, string prompt, string response)
-    {
-        _date = date;
-        _prompt = prompt;
-        _response = response;
-    }
-
-    public void Display()
-    {
-        Console.WriteLine($"{_date} - {_prompt}");
-        Console.WriteLine(_response);
-        Console.WriteLine();
-    }
-}
-   // Step 3 Save the journal file 
-   // Ask for a file name and save 
-   // Step 4 Load the journal 
-   // Prompt for filename 
-   // Load to journal 
-   // Saves to one line using a separator that is unlikely to appear in responses.
-   // Format: date~|~prompt~|~response 
-   
-            
+     
             
             
