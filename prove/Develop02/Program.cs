@@ -61,11 +61,14 @@ class Program
                 Console.WriteLine();
             }
 
-            // Step 3 Save the journal file
+            // Step 3 Save the journal file to one line
             // Ask for a file name and save
+            // use a separator that isn't in responses. 
+            // Format: date~|~prompt~|~response
+
             else if (choice == "3") 
             { 
-                ConsoleWrite("Name of file? ");
+                ConsoleWrite("Name your file: ");
                 string filename = Console.ReadLine();
                 journal.SaveToFile(filename);
             }
@@ -73,18 +76,20 @@ class Program
             // Step 4 Load the journal
             // Prompt for filename
             // Load to journal
-            {
+            
             else if (choice == "4")
+            { 
+                Console.Write("Filename: ");
+                string filename = Console.ReadLine();
+                journal.LoadFromfile(filename);
             }
 
-            // Saves to one line 
-            // use a separator that isn't in responses. 
-            // // Format: date~|~prompt~|~response
-            {
+            // Step 5 to quit
             else if (choice == "5")
+            {
+                running = false;
             }
         }
-
     }
 }
            
