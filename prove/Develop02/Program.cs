@@ -58,8 +58,18 @@ class Program
             else if (choice == "2")
             { 
                 journal.DisplayAll();
-                Console.WriteLine(); 
+
+            else if (choice == "3") 
+            } 
+
+            {
+            else if (choice == "4")
             }
+
+            {
+            else if (choice == "5")
+            }
+        }
 
            
         }
