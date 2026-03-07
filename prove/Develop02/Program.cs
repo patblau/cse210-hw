@@ -46,26 +46,35 @@ class Program
                 string response = Console.ReadLine();
                 string date = DateTime.Now.ToShortDateString();
 
-                // Create entry and add to journal
+                // Create entry, add date, and add to journal
                 Entry entry = new Entry(date, prompt, response);
                 journal.AddEntry(entry);  
                 
                 Console.WriteLine("Entry added.\n");
             }
                 
-            // Step 2 Display the Journal  
+            // Step 2 Display the Journal 
+            // Iterate through all entries in the journal
             // Display each entry on the screen
             else if (choice == "2")
             { 
                 journal.DisplayAll();
 
+            // Step 3 Save the journal file
+            // Ask for a file name and save
             else if (choice == "3") 
             } 
 
+            // Step 4 Load the journal
+            // Prompt for filename
+            // Load to journal
             {
             else if (choice == "4")
             }
 
+            // Saves to one line 
+            // use a separator that isn't in responses. 
+            // // Format: date~|~prompt~|~response
             {
             else if (choice == "5")
             }
