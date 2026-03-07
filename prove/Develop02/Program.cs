@@ -102,7 +102,7 @@ public class Journal
         _entries.Add(entry);
     }
     
-    // Step 2 DisplayAll
+    // Step 2 DisplayAll methods
     // Iterate through all entries in journal
     public void DisplayAll()
     {
@@ -111,12 +111,32 @@ public class Journal
             entry.Display();
         }
     }
+
+    // step 3 add the save/load methods 
+    public void SaveToFile(string filename)
+    {
+        using (StreamWriter outputfile = new StreamWriter(filename))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputfile.WriteLine(entry.ToFileString());
+            }
+        }
+    }
+
+    public void LoadFromFile(string filename)
+    {
+        string[] lines = File.ReadAllLines(filename);
+        _entries.Clear();
+        foreach (string line in lines)
+        {
+            Entry entry = Entry.FromFileString(line);
+            _entries.Add(entry);
+        }
+    }
 }
 
 //Step 1 create an entry
-//Step 2 display an entry
-//Step 3 save an entry to file
-//Step 4 load an entry from file
 public class Entry
 {
     private string _date;
@@ -147,6 +167,10 @@ public class Entry
         return new Entry(parts[0], parts[1], parts[2]);
     }
 }
+
+//Step 2 display an entry
+//Step 3 save an entry to file
+//Step 4 load an entry from file
 
 public class PromptGenerator
 {
