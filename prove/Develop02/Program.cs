@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 
@@ -49,22 +50,25 @@ class Program
                 // Create entry, add date, and add to journal
                 Entry entry = new Entry(date, prompt, response);
                 journal.AddEntry(entry);  
-                
                 Console.WriteLine("Entry added.\n");
             }
                 
             // Step 2 Display the Journal 
-            // Iterate through all entries in the journal
             // Display each entry on the screen
             else if (choice == "2")
             { 
                 journal.DisplayAll();
                 Console.WriteLine();
+            }
 
             // Step 3 Save the journal file
             // Ask for a file name and save
             else if (choice == "3") 
-            } 
+            { 
+                ConsoleWrite("Name of file? ");
+                string filename = Console.ReadLine();
+                journal.SaveToFile(filename);
+            }
 
             // Step 4 Load the journal
             // Prompt for filename
@@ -94,6 +98,7 @@ public class Journal
     }
     public void DisplayAll()
     {
+        // Iterate through all entries in the journal
         foreach (Entry entry in _entries)
         {
             entry.Display();
@@ -101,10 +106,6 @@ public class Journal
     }
 }
 
-public class Journal
-{
-    
-}
 
 public class Entry
 {
