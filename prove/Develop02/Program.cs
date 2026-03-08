@@ -115,18 +115,6 @@ public class Journal
         }
     }
 
-    // step 4 add the save/load methods 
-    public void SaveToFile(string filename)
-    {
-        using (StreamWriter outputfile = new StreamWriter(filename))
-        {
-            foreach (Entry entry in _entries)
-            {
-                outputfile.WriteLine(entry.ToFileString());
-            }
-        }
-    }
-
     // Step 3 Add LoadFromFile method
     public void LoadFromFile(string filename)
     {
@@ -136,6 +124,18 @@ public class Journal
         {
             Entry entry = Entry.FromFileString(line);
             _entries.Add(entry);
+        }
+     }
+
+    // step 4 add the save/load methods 
+    public void SaveToFile(string filename)
+    {
+        using (StreamWriter outputfile = new StreamWriter(filename))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputfile.WriteLine(entry.ToFileString());
+            }
         }
     }
 }
@@ -161,17 +161,17 @@ public class Entry
         Console.WriteLine();
     }
 
-    //Step 4 save an entry to file
-    public string ToFileString()
-    {
-        return $"{_date}~|~{_prompt}~|~{_response}";
-    }
-
     //Step 3 load an entry from file
     public static Entry FromFileString(string line)
     {
         string[] parts = line.Split("~|~");
         return new Entry(parts[0], parts[1], parts[2]);
+    }
+
+    //Step 4 save an entry to file
+    public string ToFileString()
+    {
+        return $"{_date}~|~{_prompt}~|~{_response}";
     }
 }
 
