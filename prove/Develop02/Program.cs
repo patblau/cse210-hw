@@ -82,7 +82,7 @@ internal class Program
                 Console.Write("Name your file: ");
                 string filename = Console.ReadLine();
                 journal.SaveToFile(filename);
-                Console.WriteLine("Your journal was saved successfully.")
+                Console.WriteLine("Your journal was saved successfully.");
             }
 
             // Step 5 to quit
