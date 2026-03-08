@@ -68,7 +68,7 @@ internal class Program
 
             else if (choice == "3") 
             { 
-                ConsoleWrite("Name your file: ");
+                Console.Write("Name your file: ");
                 string filename = Console.ReadLine();
                 journal.SaveToFile(filename);
             }
