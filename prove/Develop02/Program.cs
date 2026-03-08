@@ -174,9 +174,46 @@ public class Entry
     }
 }
 
+// Step 1 create list of prompts 
 public class PromptGenerator
 {
-    
+    private List<string> _prompts = new List<string>()
+    {
+        "What did you discover about yourself today?",
+        "What does sucess mean to you?",
+        "What do you want to accoplish tomorrow?",
+        "Did anything happen out of the ordinary?",
+        "Is there a skill you are developing? How are progressing with it",
+        "What changes do you want to make in your life?",
+        "What makes you happy?",
+        "Name a friend and what do they mean to you?",
+        "Did someone hurt you today? What can you do to bring about a possitve outcome?",
+        "Name your family members, their date of birth, and where they were born.",
+        "Name an ancestor and what you know about them.",
+        "What do you value the most and why?",
+        "What boundries do you have for yourself?",
+        "What lines will you never cross?",
+        "What makes you feel safe?",
+        "What brings you comfort?",
+        "Who makes you feel loved?",
+        "What do you want most out of life?",
+        "What do you believe in?",
+        "Where have you lived?",
+        "What states have you been to and why?",
+        "Have you traveled out of the U.S?",
+        "What talents do you have?",
+        "What do you like about yourself?"
+    };
+
+    // Random object selecting a prompt
+    private Random _random = new Random();
+
+    // Return random prompt from list
+    public string GetRandomPrompt()
+    {
+        int index = _random.Next(_prompts.Count);
+        return _prompts[index];
+    }    
 }
 
      
