@@ -172,7 +172,7 @@ public class Entry
     }
 
     //Escape quotes for CVS to work
-    public string EscapeCvs(string text)
+    private string EscapeCvs(string text)
     {
         if (text == null)
         {
