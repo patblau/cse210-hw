@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Markup;
 using System.Xml.Serialization;
 
 internal class Program
@@ -164,14 +165,64 @@ public class Entry
     //Step 3 load an entry from file
     public static Entry FromFileString(string line)
     {
-        string[] parts = line.Split("~|~");
+        List<string> parts = ParseCsvLine(line);
         return new Entry(parts[0], parts[1], parts[2]);
+    }
+
+    private static List<string> ParseCsvLine(string line)
+    {
+        List<string> values = new List<string>();
+        string current = "";
+        bool inQuotes = false;
+
+        for (int i = 0; i < line.Length; i++)
+        {
+            char c = line[i];
+            
+            if (c == "");
+            {
+                if (inQuotes && i + 1 < LinkedListNode.Length && line[i + 1] =="")
+                {
+                    current += "";
+                    i++;
+                }
+                else
+                {
+                    inQuotes = !inQuotes;
+                }
+            }
+            else if (c == ',' && !inQuotes)
+            {
+                values.Add(current);
+                current = "";
+            }
+            else
+            {
+                current += c;
+            }
+        }
+
+        values.Add(current);
+        return values;
     }
 
     //Step 4 save an entry to file
     public string ToFileString()
     {
-        return $"{_date}~|~{_prompt}~|~{_response}";
+        return $"{EscapeCsv(_date)}~|~{_EscapeCsv(prompt)}~|~{EscapeCsv(_response)}";
+    }
+
+    public string EscapeCvs(string text)
+    {
+        if (text == null)
+        {
+            return "\"\"";
+        }
+    //replace one (") quote with 2 "quotes"
+    string escape = text.Replace("\"", "\"\"");
+
+    // Wrap whole field in " "
+    return $"\"{escaped}\"";
     }
 }
 
