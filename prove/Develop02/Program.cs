@@ -201,11 +201,11 @@ public class Entry
         {
             char c = line[i];
             
-            if (c == "");
+            if (c == '"')
             {
-                if (inQuotes && i + 1 < LinkedListNode.Length && line[i + 1] =="")
+                if (inQuotes && i + 1 < line.Length && line[i + 1] == "")
                 {
-                    current += "";
+                    current += '"';
                     i++;
                 }
                 else
