@@ -81,7 +81,7 @@ internal class Program
             { 
                 Console.Write("What file do you want loaded: ");
                 string filename = Console.ReadLine();
-                journal.LoadFromfile(filename);
+                journal.LoadFromFile(filename);
             }
 
             // Step 5 to quit
