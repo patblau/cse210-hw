@@ -155,7 +155,7 @@ public class Entry
     //Step 2 display an entry
     public void Display()
     {
-        Console.WriteLine($"{_date} - {prompt}");
+        Console.WriteLine($"{_date} - {_prompt}");
         Console.WriteLine(_response);
         Console.WriteLine();
     }
