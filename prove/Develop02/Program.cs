@@ -61,27 +61,28 @@ internal class Program
                 Console.WriteLine();
             }
 
-            // Step 3 Save the journal file to one line
-            // Ask for a file name and save
-            // use a separator that isn't in responses. 
-            // Format: date~|~prompt~|~response
-
-            else if (choice == "3") 
-            { 
-                Console.Write("Name your file: ");
-                string filename = Console.ReadLine();
-                journal.SaveToFile(filename);
-            }
-
-            // Step 4 Load the journal
+            // Step 3 Load the journal
             // Prompt for filename
             // Load to journal
             
-            else if (choice == "4")
+            else if (choice == "3")
             { 
                 Console.Write("What file do you want loaded: ");
                 string filename = Console.ReadLine();
                 journal.LoadFromFile(filename);
+            }
+
+            // Step 4 Save the journal file to one line
+            // Ask for a file name and save
+            // use a separator that isn't in responses. 
+            // Format: date~|~prompt~|~response
+
+            else if (choice == "4") 
+            { 
+                Console.Write("Name your file: ");
+                string filename = Console.ReadLine();
+                journal.SaveToFile(filename);
+                Console.WriteLine("Your journal was saved successfully.")
             }
 
             // Step 5 to quit
@@ -114,7 +115,7 @@ public class Journal
         }
     }
 
-    // step 3 add the save/load methods 
+    // step 4 add the save/load methods 
     public void SaveToFile(string filename)
     {
         using (StreamWriter outputfile = new StreamWriter(filename))
@@ -126,7 +127,7 @@ public class Journal
         }
     }
 
-    // Step 4: Add LoadFromFile method
+    // Step 3 Add LoadFromFile method
     public void LoadFromFile(string filename)
     {
         string[] lines = File.ReadAllLines(filename);
@@ -160,13 +161,13 @@ public class Entry
         Console.WriteLine();
     }
 
-    //Step 3 save an entry to file
+    //Step 4 save an entry to file
     public string ToFileString()
     {
         return $"{_date}~|~{_prompt}~|~{_response}";
     }
 
-    //Step 4 load an entry from file
+    //Step 3 load an entry from file
     public static Entry FromFileString(string line)
     {
         string[] parts = line.Split("~|~");
@@ -215,7 +216,7 @@ public class PromptGenerator
         // Shuffel prompts once when starting
         if (_currentIndex == 0)
         {
-            ShuffelPrompts();
+            ShufflePrompts();
         }
 
         string prompt = _prompts[_currentIndex];
@@ -229,7 +230,7 @@ public class PromptGenerator
     return prompt;
     }
 
-    private void ShuffelPrompts()
+    private void ShufflePrompts()
     {
         for (int i = _prompts.Count - 1; i >0; i--)
         {
