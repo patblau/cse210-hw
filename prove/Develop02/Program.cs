@@ -209,7 +209,7 @@ public class Entry
     //Step 4 save one entry as a CVS line
     public string ToFileString()
     {
-        return $"{EscapeCsv(_date)}, {EscapeCsv(_prompt)}, {EscapeCsv(_response)}";
+        return $"{EscapeCsv(_date)},{EscapeCsv(_prompt)},{EscapeCsv(_response)}";
     }
 
     public string EscapeCvs(string text)
