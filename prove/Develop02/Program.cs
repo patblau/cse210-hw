@@ -166,7 +166,7 @@ public class Entry
     //Step 3 load an entry from file
     public string ToFileString()
     {
-        return $"{EscapeCsv(_date)}, {_EscapeCsv(prompt)}, {EscapeCsv(_response)}";
+        return $"{EscapeCsv(_date)}, {EscapeCsv(_prompt)}, {EscapeCsv(_response)}";
     }
 
     public string EscapeCvs(string text)
@@ -180,9 +180,7 @@ public class Entry
         
         // Wrap whole field in " "
         return $"\"{escaped}\"";
-
     }
-        
 
      //Step 4 save an entry to file
     public static Entry FromFileString(string line)
