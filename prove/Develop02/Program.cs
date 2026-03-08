@@ -166,7 +166,7 @@ public class Entry
     //Step 3 load an entry from file
     public string ToFileString()
     {
-        return $"{EscapeCsv(_date)}~|~{_EscapeCsv(prompt)}~|~{EscapeCsv(_response)}";
+        return $"{EscapeCsv(_date)}, {_EscapeCsv(prompt)}, {EscapeCsv(_response)}";
     }
 
     public string EscapeCvs(string text)
@@ -176,7 +176,7 @@ public class Entry
             return "\"\"";
         }
         //replace one (") quote with 2 "quotes"
-        string escape = text.Replace("\"", "\"\"");
+        string escaped = text.Replace("\"", "\"\"");
         
         // Wrap whole field in " "
         return $"\"{escaped}\"";
