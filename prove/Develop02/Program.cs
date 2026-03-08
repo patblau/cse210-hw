@@ -142,13 +142,15 @@ public class Journal
     }
 }
 
-//Step 1 create an entry
+//Step 1 create an entrypublic class Entry
 public class Entry
 {
     private string _date;
     private string _prompt;
     private string _response;
+
     public Entry(string date, string prompt, string response)
+    
     {
         _date = date;
         _prompt = prompt;
@@ -163,19 +165,38 @@ public class Entry
         Console.WriteLine();
     }
 
-    //Step 3 load one entry from a CVS line
+    //Convert entry into CVS line ()
+    public string ToFileString()
+    {
+        return $"{EscapeCsv(_date)},{EscapeCsv(_prompt)},{EscapeCsv(_response)}";
+    }
+
+    //Escape quotes for CVS to work
+    public string EscapeCvs(string text)
+    {
+        if (text == null)
+        {
+            return "\"\"";
+        }
+        
+        string escaped = text.Replace("\"", "\"\"");
+        return $"\"{escaped}\"";
+    }
+
+    //Convert a CSV line back to an Entry object
     public static Entry FromFileString(string line)
     {
         List<string> parts = ParseCsvLine(line);
         return new Entry(parts[0], parts[1], parts[2]);
     }
 
+    //to handle commas and quate marks via ParseCsvLine
     private static List<string> ParseCsvLine(string line)
     {
-        List<string> values = new List<string>();
+        List<string> values = List<string>();
         string current = "";
         bool inQuotes = false;
-
+   
         for (int i = 0; i < line.Length; i++)
         {
             char c = line[i];
@@ -205,27 +226,8 @@ public class Entry
         values.Add(current);
         return values;
     }
-
-    //Step 4 save one entry as a CVS line
-    public string ToFileString()
-    {
-        return $"{EscapeCsv(_date)},{EscapeCsv(_prompt)},{EscapeCsv(_response)}";
-    }
-
-    public string EscapeCvs(string text)
-    {
-        if (text == null)
-        {
-            return "\"\"";
-        }
-        //replace one (") quote with 2 "quotes"
-        string escaped = text.Replace("\"", "\"\"");
-        
-        // Wrap whole field in " "
-        return $"\"{escaped}\"";
-    }
 }
-    
+   
 // Step 1 create list of prompts 
 public class PromptGenerator
 {
