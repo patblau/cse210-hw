@@ -181,7 +181,7 @@ public class PromptGenerator
     {
         "What did you discover about yourself today?",
         "What does sucess mean to you?",
-        "What do you want to accoplish tomorrow?",
+        "What do you want to accomplish tomorrow?",
         "Did anything happen out of the ordinary?",
         "Is there a skill you are developing? How are progressing with it",
         "What changes do you want to make in your life?",
@@ -207,12 +207,37 @@ public class PromptGenerator
 
     // Random object selecting a prompt
     private Random _random = new Random();
+    private int _currentIndex = 0;
 
     // Return random prompt from list
     public string GetRandomPrompt()
     {
-        int index = _random.Next(_prompts.Count);
-        return _prompts[index];
+        // Shuffel prompts once when starting
+        if (_currentIndex == 0)
+        {
+            ShuffelPrompts();
+        }
+
+        string prompt = _prompts[_currentIndex];
+        _currentIndex++;
+
+        // Reset after all prompts are used
+        if (_currentIndex >= _prompts.Count)
+        {
+            _currentIndex = 0;
+        }
+    return prompt;
+    }
+
+    private void ShuffelPrompts()
+    {
+        for (int i = _prompts.Count - 1; i >0; i--)
+        {
+            int j = _random.Next(i +1);
+            string temp = _prompts[i];
+            _prompts[i] = _prompts[j];
+            _prompts[j] = temp;
+        }
     }    
 }
 
