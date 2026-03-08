@@ -193,7 +193,7 @@ public class Entry
     //to handle commas and quate marks via ParseCsvLine
     private static List<string> ParseCsvLine(string line)
     {
-        List<string> values = List<string>();
+        List<string> values = new List<string>();
         string current = "";
         bool inQuotes = false;
    
