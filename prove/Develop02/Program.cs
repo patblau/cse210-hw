@@ -163,26 +163,7 @@ public class Entry
         Console.WriteLine();
     }
 
-    //Step 3 load an entry from file
-    public string ToFileString()
-    {
-        return $"{EscapeCsv(_date)}, {EscapeCsv(_prompt)}, {EscapeCsv(_response)}";
-    }
-
-    public string EscapeCvs(string text)
-    {
-        if (text == null)
-        {
-            return "\"\"";
-        }
-        //replace one (") quote with 2 "quotes"
-        string escaped = text.Replace("\"", "\"\"");
-        
-        // Wrap whole field in " "
-        return $"\"{escaped}\"";
-    }
-
-     //Step 4 save an entry to file
+    //Step 3 load one entry from a CVS line
     public static Entry FromFileString(string line)
     {
         List<string> parts = ParseCsvLine(line);
@@ -201,7 +182,7 @@ public class Entry
             
             if (c == '"')
             {
-                if (inQuotes && i + 1 < line.Length && line[i + 1] == "")
+                if (inQuotes && i + 1 < line.Length && line[i + 1] == '"')
                 {
                     current += '"';
                     i++;
@@ -221,12 +202,30 @@ public class Entry
                 current += c;
             }
         }
-
         values.Add(current);
         return values;
     }
+
+    //Step 4 save one entry as a CVS line
+    public string ToFileString()
+    {
+        return $"{EscapeCsv(_date)}, {EscapeCsv(_prompt)}, {EscapeCsv(_response)}";
+    }
+
+    public string EscapeCvs(string text)
+    {
+        if (text == null)
+        {
+            return "\"\"";
+        }
+        //replace one (") quote with 2 "quotes"
+        string escaped = text.Replace("\"", "\"\"");
+        
+        // Wrap whole field in " "
+        return $"\"{escaped}\"";
+    }
 }
-  
+    
 // Step 1 create list of prompts 
 public class PromptGenerator
 {
