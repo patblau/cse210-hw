@@ -68,9 +68,10 @@ internal class Program
             
             else if (choice == "3")
             { 
-                Console.Write("What file do you want loaded: ");
+                Console.Write("What file do you want loaded? ");
                 string filename = Console.ReadLine();
                 journal.LoadFromFile(filename);
+                Console.WriteLine("Your Journal:");
             }
 
             // Step 4 Save the journal file to one line
@@ -163,6 +164,27 @@ public class Entry
     }
 
     //Step 3 load an entry from file
+    public string ToFileString()
+    {
+        return $"{EscapeCsv(_date)}~|~{_EscapeCsv(prompt)}~|~{EscapeCsv(_response)}";
+    }
+
+    public string EscapeCvs(string text)
+    {
+        if (text == null)
+        {
+            return "\"\"";
+        }
+        //replace one (") quote with 2 "quotes"
+        string escape = text.Replace("\"", "\"\"");
+        
+        // Wrap whole field in " "
+        return $"\"{escaped}\"";
+
+    }
+        
+
+     //Step 4 save an entry to file
     public static Entry FromFileString(string line)
     {
         List<string> parts = ParseCsvLine(line);
@@ -205,27 +227,8 @@ public class Entry
         values.Add(current);
         return values;
     }
-
-    //Step 4 save an entry to file
-    public string ToFileString()
-    {
-        return $"{EscapeCsv(_date)}~|~{_EscapeCsv(prompt)}~|~{EscapeCsv(_response)}";
-    }
-
-    public string EscapeCvs(string text)
-    {
-        if (text == null)
-        {
-            return "\"\"";
-        }
-    //replace one (") quote with 2 "quotes"
-    string escape = text.Replace("\"", "\"\"");
-
-    // Wrap whole field in " "
-    return $"\"{escaped}\"";
-    }
 }
-
+  
 // Step 1 create list of prompts 
 public class PromptGenerator
 {
